@@ -27,3 +27,11 @@ func Cfunc(result: String) {
 func Dfunc(result: String) -> String {
     return result
 }
+
+// 1.5 함수 호출
+// 함수 호출 시 매개변수가 있는 경우
+// 인자 레이블을 붙여서 호출해야함
+func hello(name: String) {
+    print("안녕 \(name)")
+}
+hello(name: "홍길동")
