@@ -35,3 +35,33 @@ func hello(name: String) {
     print("안녕 \(name)")
 }
 hello(name: "홍길동")
+
+// 1.6 함수 반환
+// _ 사용시 반환 값 생략 가능
+func FuncReturn() -> (String, Int) {
+    let fname = "홍길동"
+    let fage = 99
+    return (fname, fage)
+}
+var (A,B) = FuncReturn()
+print("이름 : \(A), 나이 \(B)")
+
+// 추론 방지
+func FuncReturn2() -> (n: String, a: Int) {
+    let fname = "홍길동"
+    let fage = 99
+    return (fname, fage)
+}
+var result = FuncReturn2()
+print("이름 : \(result.n), 나이 \(result.a)")
+
+// 데이터 타입 축약
+// 타입 얼라이스로 타입명 선언
+typealias FuncResult = (String, Int)
+func FuncReturn3() -> FuncResult {
+    let fname = "홍길동"
+    let fage = 99
+    return (fname, fage)
+}
+var result3 = FuncReturn3()
+print("이름 : \(result3.0), 나이 \(result3.1)")
