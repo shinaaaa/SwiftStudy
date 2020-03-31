@@ -65,3 +65,53 @@ func FuncReturn3() -> FuncResult {
 }
 var result3 = FuncReturn3()
 print("이름 : \(result3.0), 나이 \(result3.1)")
+
+
+// 2. 매개변수
+// 내부 매개변수 : 입력 받은 인자 값을 함수 내부에 사용하기 위한 변수
+// 외부 매개변수 : 함수 호출 시 인자 값의 레이블, 함수의 식별자
+// func 함수명 (외부 매개변수 : 내부 매개변수) { 함수 작성 }
+func test1(food: String, cost: Int) {
+    print("\(food)의 가격은 \(cost)원 입니다.")
+}
+test1(food: "김치", cost: 1000)
+
+// 외부 매개변수 생략
+func test2(_ food: String, _ cost: Int) {
+    print("\(food)의 가격은 \(cost)원 입니다.")
+}
+test2("불고기", 2000)
+
+// 가변 인자
+// func 함수명 (외부 매개변수 : 내부 매개변수 ...) { 함수 작성 }
+func test3(food: String ...) {
+    for i in food { print("\(i), ") }
+}
+test3(food: "자장면", "탕수육", "짬뽕")
+
+// 기본 값 포함 매개변수
+// func 함수명 (외부 매개변수 : 내부 매개변수 = 기본 값) { 함수 작성 }
+func test4(food: String = "국밥") {
+    print("오늘 점심은 \(food)")
+}
+test4()
+test4(food: "치킨")
+
+// 매개 변수 수정
+func test5(food: String) -> String {
+    var food = food
+    food = "무조건 피자야"
+    return food
+}
+print("오늘 점심은 \(test5(food: "쌀국수"))")
+
+// InOut 매개변수
+// 함수에서 사용한 인자 값이 함수 외부 값에 변화를 줌
+var num = 1
+
+func test6(param_num: inout Int) -> Int {
+    param_num+=1
+    return param_num
+}
+print("\(test6(param_num: &num))")
+print("\(num)(으)로 바뀌었다")
