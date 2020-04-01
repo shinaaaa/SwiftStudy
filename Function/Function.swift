@@ -115,3 +115,16 @@ func test6(param_num: inout Int) -> Int {
 }
 print("\(test6(param_num: &num))")
 print("\(num)(으)로 바뀌었다")
+
+// 변수의 생존 주기
+// 변수의 생존 범위 -> Scope
+// 전역 변수 -> Global 변수
+// 지역 변수 -> Local 변수
+do {
+    var A = "Global"
+    do {
+        var A = "Local"
+        print(A)
+    } catch {}
+    print(A)
+} catch {}
