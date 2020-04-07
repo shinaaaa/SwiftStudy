@@ -45,3 +45,34 @@ class Car2 {
 class Car3 {
     var color: String = ""
 }
+
+// 지연 저장 Properties
+// lazy -> lazy 키워드가 붙은 프로퍼티는 초기화되지 않고 대기
+// 호출하는 순간 초기화 함
+class Start {
+    init() {
+        print("시작");
+    }
+}
+class LazyTest {
+    lazy var start = Start()
+    init() {
+        print("Lazy")
+    }
+}
+let lzy = LazyTest()
+//lzy.start
+
+// 클로저를 이용한 저장 프로퍼티 초기화
+class ProTest1 {
+    var pro: String! = {
+        print("하이")
+        return "안녕"
+    }()
+    
+    var pro2: String! = {
+        print("바이")
+        return "잘가"
+    }()
+}
+let p = ProTest1()
