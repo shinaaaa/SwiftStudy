@@ -77,4 +77,17 @@ class ProTest1 {
 }
 let p = ProTest1()
 
-//
+// 연산 프로퍼티
+// 값을 저장하고 다른 값을 연산 처리하여 간헐적으로 값은 제공
+class test() {
+    var result: String!
+    
+    var A: Int! {
+        get {
+            print(result)
+        }
+        set(result) {
+            self.result = result
+        }
+    }
+}
