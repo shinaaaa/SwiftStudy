@@ -29,7 +29,7 @@ print(InStTest1.a)
 - 클래스, 구조체, 열거형 사용 가능
 
 
-```
+```swift
 // 1. 초기화 구문
 class Car {
     var color: String
