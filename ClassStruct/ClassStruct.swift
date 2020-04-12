@@ -79,7 +79,7 @@ let p = ProTest1()
 
 // 연산 프로퍼티
 // 값을 저장하고 다른 값을 연산 처리하여 간헐적으로 값은 제공
-class test() {
+class test {
     var result: String!
     
     var A: Int! {
@@ -91,3 +91,27 @@ class test() {
         }
     }
 }
+
+// 프로퍼티 옵저버
+// 프로퍼티의 값을 직접 변경하거나 자동을 변경되는 경우 호출됨
+// willset : 프로퍼티의 값이 변경되지 직전에 호출
+// didset : 프로퍼티의 값이 변경된 직후에 호출
+
+struct Job {
+    var income: Int = 0 {
+        willset(newIncome) {
+            print("이번달은 \(newIncome)")
+        }
+        didset {
+            if income > oldValue {
+                print("월급 증가")
+            } else {
+                print("월급 삭감")
+            }
+        }
+    }
+}
+
+var job = Job(income: 10000)
+
+job.income = 20000
