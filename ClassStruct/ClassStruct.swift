@@ -115,3 +115,21 @@ struct Job {
 var job = Job(income: 10000)
 
 job.income = 20000
+
+
+// 타입 프로퍼티
+// 인스턴스를 생성하지 않고 클래스나 구조체 자체에 값을 저장하는 것
+// 저장된 값을 모든 인스턴스가 공통으로 사용 가능
+// 초기값 할당 필수
+
+// 클래스 내
+static let hi = "hi"
+
+class let bye: String {
+    get {
+        return "bye"
+    }
+    set {
+        
+    }
+}
