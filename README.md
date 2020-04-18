@@ -16,13 +16,21 @@
 
 [If](./If)
 
+[Inheritance](./Inheritance)
+
+[Method](./Method)
+
 [Optional](./Optional)
+
+[Property](./Property)
 
 [Set](./Set)
 
 [Switch](./Switch)
 
 [Tuple](./Tuple)
+
+[Type](./Type)
 
 [While](./While)
 
