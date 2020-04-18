@@ -34,4 +34,46 @@ subClass.foo()
 // 오버 라이딩
 // 자식 클래스에서 재정의된 메소드나 프로퍼티를
 // 부모 클래스로 부터 물려 받은 내용에 덮어씀
+class Vehicle {
+    var currentSpeed = 0.0
+    
+    var description: String {
+        return "\(self.currentSpeed) 속도로 이동중"
+    }
+    
+    func makeNosie() {
+    }
+}
 
+class Car: Vehicle {
+    var gear = 0
+    var engineLevel = 0
+    
+    override var currentSpeed: Double {
+        get {
+            return Double(self.engineLevel * 50)
+        }
+        set {
+            
+        }
+    }
+    
+    override var description: String {
+        get {
+            return "Car : engineLevel = \(self.engineLevel) currentSpeed = \(self.currentSpeed)"
+        }
+        set {
+            print("\(newValue)")
+        }
+    }
+}
+
+let car = Car()
+car.engineLevel = 10
+c.currentSpeed
+c.description = "소나타"
+
+print(c.description)
+
+// 오버로딩
+// 메소드 이름은 같으나 매개변수의 변화를 줄어 새로운 매소드로 만드는 문법
