@@ -112,3 +112,46 @@ let anyCar: Car = SUV()
 let anySUV = anyCar as? SUV
 ```
 
+
+
+### Any, AnyObject
+
+- Any - 클래스에 국한되지않고 모든 타입을 허용
+- AnyObject - 모든 클래스 타입을 저장할 수 있는 범용 타입
+
+```swift
+var allCar: AnyObject = Car()
+
+allCar = SUV()
+
+func move(_ param: AnyObject) -> AnyObject {
+
+  return param
+
+}
+
+move(Car())
+
+move(Vehicle())
+
+
+
+var list2 = [AnyObject]()
+
+list.append(Car())
+
+list.append(SUV())
+
+
+
+// 타입 캐스팅을 통한 구체적 타입으로 변환 가능
+
+let obj: AnyObject = SUV()
+
+if let suv = obj as? SUV {
+
+  print("캐스팅 성공")
+
+}
+```
+
