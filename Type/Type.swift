@@ -77,3 +77,6 @@ let obj: AnyObject = SUV()
 if let suv = obj as? SUV {
     print("캐스팅 성공")
 }
+
+// 초기화 구문
+// 구조체나 클래스 사용 시 인스턴스를 생성하여 메모리 공간 할당 후 사용
