@@ -30,3 +30,33 @@ class Foo {
 }
 // 호출
 Foo.fooType()
+
+// init 초기화 메소드
+// - 초기화 메소드는 init으로 통일
+// - 매개변수의 형태는 자유
+// - 정의된 메소드는 직접호출이 가능하나 대부분 인스턴스 생성 시 간접 호출
+struct ReSoultion2 {
+    var w = 0
+    var h = 0
+    
+    init(w:init) {
+        self.w = w
+    }
+}
+
+class videoMode {
+    var resolution = ReSoultion2(w: 1080)
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+    
+    init(interlaced: Bool, frameRate: Double) {
+        self.interlaced = interlaced
+        self.frameRate = frameRate
+    }
+}
+
+// 구조체에 대한 인스턴스 생성
+let resolution2 = ReSoultion2.init(w:2048)
+// 클래스에 대한 인스턴스 생성
+let videoMode = videoMode.init(interlaced:true, frameRate:40.0)
