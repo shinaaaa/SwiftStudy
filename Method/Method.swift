@@ -39,7 +39,7 @@ struct ReSoultion2 {
     var w = 0
     var h = 0
     
-    init(w:init) {
+    init(w: Int) {
         self.w = w
     }
 }
@@ -60,3 +60,31 @@ class videoMode {
 let resolution2 = ReSoultion2.init(w:2048)
 // 클래스에 대한 인스턴스 생성
 let videoMode = videoMode.init(interlaced:true, frameRate:40.0)
+
+// 옵셔널 체인
+// - nil이 할당될 수 있는 값
+// - 초기값으로 선언되며 값 출력 과정에서 오류 발생시 대입되는 값
+// - 흔히 if구문을 통하여 옵셔널 검증을 함
+// - 옵셔널 체인으로 참조된 값음 옵셔널 타입으로 반환됨
+// - 옵셔널 타입이 다중으로 되어있어도 한번만 처리됨
+// - 옵셔널 체인 구문 : OptionalTest?.getValue()?.str
+// - 옵셔널 강제 해체 : OptionalTest!.getValue()!.str
+struct Human {
+    var name: String?
+    var man: Bool = true
+}
+
+var boy: Human? Human(name: "홍길동", man:true)
+
+if boy != nil {
+    if boy!.name != nil {
+        print("이름은 \(boy!.name!)입니다.")
+    }
+}
+
+// 비강제 해제 구문
+if let b = boy {
+    if let name = b.name {
+        print("이름은 \(name)입니다.")
+    }
+}
