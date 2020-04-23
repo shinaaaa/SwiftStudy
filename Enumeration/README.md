@@ -30,3 +30,42 @@ switch dicW {
 }
 ```
 
+
+
+### 값 분리
+
+```swift
+enum HTTPCode: Int {
+    case OK = 200
+    case NOT_MODIFY = 304
+    case INCORRECT_PAGE = 404
+    case SERVER_ERROR = 500
+}
+print(HTTPCode.OK.rawValue)
+```
+
+
+
+### 자동 할당
+
+```swift
+enum Rank: Int {
+    case one = 1
+    case two, three
+}
+print(Rank.one.rawValue)
+print(Rank.three.rawValue)
+```
+
+
+
+### 연관 값
+
+```swift
+enum ImageFormat {
+    case jpg
+    case png(Bool)
+    case gif(Int, Bool)
+}
+```
+
