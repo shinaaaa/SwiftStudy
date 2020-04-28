@@ -5,6 +5,8 @@
 // 구현한 객제의 메소드나 속성을 은닉하고 프로토콜에서 선언된 명세의 내용만 제공
 // protocol 프로토콜명 { 구현할 메소드 명세 }
 // struct/class/enum/extention 객체명: 구현할 프로토콜명 { }
+
+// 프로토콜 프로퍼티
 protocol SomePropertyProtocol {
     var name: String { get set }
     var description: String { get }
@@ -18,3 +20,21 @@ struct RubyMember: SomePropertyProtocol {
 }
 var ruby = RubyMember()
 print(ruby.description)
+
+// 프로토콜 메소드
+protocol SomeMethodProtocol {
+    func execute(cmd: String)
+    func showPory(p: Int) -> String
+}
+
+struct RubyService: SomeMethodProtocol {
+    func execute(cmd: String) {
+        if cmd == 'start' {
+            print("실행합니다.")
+        }
+    }
+    
+    func showPort(p: Int) -> Stirng {
+        return "Port : \(p)"
+    }
+}
