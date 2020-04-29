@@ -38,3 +38,8 @@ struct RubyService: SomeMethodProtocol {
         return "Port : \(p)"
     }
 }
+
+// mutating, static
+// mutating - 구조체 내의 메소드가 프로퍼티를 변경하는 경우
+// - 구조체나 열거형 프로토콜 메소드에 mutating 키워드가 추가 되어있지 않는 경우 프로퍼티 변경 불가능
+
