@@ -29,7 +29,7 @@ print(ruby.description)
 
 
 
-#### 프로토콜 메소드
+#### 프로토콜 메소드 
 
 ```swift
 protocol SomeMethodProtocol {
